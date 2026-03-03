@@ -5,14 +5,14 @@ import { useState, useRef, useContext } from "react";
 import GeneratedResult from "./GeneratedResult";
 import HomeAuraLoadingScreen from "../HomeAuraLoadingScreen";
 const styles = [
-  { label: "Surprise Me", image: "/images/Floor/style/surprise-me.png" },
+  { label: "Surprise Me", image: "/images/Floor/style/Surprise-Me.png" },
   {
     label: "Hardwood Flooring",
     image: "/images/Floor/style/Hardwood-Flooring.png",
   },
   {
     label: "Engineered Wood",
-    image: "/images/Floor/style/engineered-wood.png",
+    image: "/images/Floor/style/Engineered-Wood.png",
   },
   {
     label: "Laminate Flooring",
@@ -23,10 +23,10 @@ const styles = [
     label: "Marble Flooring",
     image: "/images/Floor/style/Marble-Flooring.png",
   },
-  { label: "Ceramic Tiles", image: "/images/Floor/style/ceramic-tiles.png" },
+  { label: "Ceramic Tiles", image: "/images/Floor/style/Ceramic-Tiles.png" },
   {
     label: "Porcelain Tiles",
-    image: "/images/Floor/style/porcelain-tiles.png",
+    image: "/images/Floor/style/Porcelain-Tiles.png",
   },
   {
     label: "Terrazzo Flooring",
