@@ -1,6 +1,8 @@
 import cloudinary from "./cloudinary.js";
 import fetch from "node-fetch";
 
+const DASH_SCOPE_API_URL = process.env.CURL_lOCATION;
+
 export const generateHomeAuraImage = async ({
   roomType,
   style,
@@ -10,52 +12,46 @@ export const generateHomeAuraImage = async ({
 }) => {
   try {
     const prompt = `Redesign this ${designType} space as a ${roomType}, styled in ${style} style with ${color} color palette. Photorealistic, high quality, professional design render, keep the same structure and layout.`;
-    const response = await fetch(
-      "https://dashscope-intl.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: process.env.DASHSCOPE_API_KEY,
-        },
-        body: JSON.stringify({
-          model: process.env.DASHSCOPE_MODEL,
-          input: {
-            messages: [
-              {
-                role: "user",
-                content: [
-                  {
-                    text: prompt,
-                  },
-                ],
-              },
+
+    const body = {
+      model: process.env.DASHSCOPE_MODEL,
+      input: {
+        messages: [
+          {
+            role: "user",
+            content: [
+              { text: prompt },
+              ...(uploadedImage ? [{ image: uploadedImage }] : []),
             ],
           },
-          parameters: {
-            negative_prompt: "",
-            prompt_extend: true,
-            watermark: false,
-            n: 1,
-            size: "1328*1328",
-          },
-        }),
+        ],
       },
-    );
+      parameters: {
+        negative_prompt: "",
+        watermark: false,
+        width: uploadedImage?.width || 512,
+        height: uploadedImage?.height || 512,
+      },
+    };
+
+    const response = await fetch(DASH_SCOPE_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: process.env.DASHSCOPE_API_KEY,
+      },
+      body: JSON.stringify(body),
+    });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error(data);
-      throw new Error("Dashscope image generation failed");
+      console.error("API Error:", data);
+      throw new Error("Image generation failed");
     }
 
     const imageUrl = data?.output?.choices?.[0]?.message?.content?.[0]?.image;
-
-    if (!imageUrl) {
-      throw new Error("No image returned from Dashscope");
-    }
-
+    if (!imageUrl) throw new Error("No image returned from API");
     const uploadResponse = await cloudinary.uploader.upload(imageUrl, {
       folder: "soulmates",
     });
@@ -63,6 +59,6 @@ export const generateHomeAuraImage = async ({
     return uploadResponse.secure_url;
   } catch (error) {
     console.error("Image Generation Error:", error);
-    throw new Error("Image generation failed");
+    throw error;
   }
 };

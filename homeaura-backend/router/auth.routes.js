@@ -31,6 +31,7 @@ router.get(
         username: req.user.username,
         email: req.user.email,
         profilePicture: req.user.profilePicture,
+        credits: req.user.credits,
       };
 
       res.redirect(

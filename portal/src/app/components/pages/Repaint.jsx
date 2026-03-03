@@ -164,7 +164,6 @@ const InteriorDesign = ({ onMessageSent }) => {
     const result = await generateDesign({
       designType: "repaint",
       roomType: selectedRoom,
-      style: selectedStyle,
       color: selectedColor,
       uploadedImage: uploadedImage,
     });

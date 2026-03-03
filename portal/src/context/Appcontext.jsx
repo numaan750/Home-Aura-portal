@@ -574,6 +574,7 @@ const AppProvider = ({ children }) => {
 
             setToken(token);
             setUser(user);
+            setCredits(user.credits || 0);
             setAuthenticated(true);
             setLoading(false);
 
@@ -628,13 +629,31 @@ const AppProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
+      // Blob URL ko base64 mein convert karo
+      let base64Image = null;
+      if (
+        designData.uploadedImage &&
+        designData.uploadedImage.startsWith("blob:")
+      ) {
+        const fetchedBlob = await fetch(designData.uploadedImage);
+        const blob = await fetchedBlob.blob();
+        base64Image = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.readAsDataURL(blob);
+        });
+      }
+
       const response = await fetch(`${API_URL}/api/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(designData),
+        body: JSON.stringify({
+          ...designData,
+          uploadedImage: base64Image,
+        }),
       });
 
       const data = await response.json();
@@ -645,9 +664,14 @@ const AppProvider = ({ children }) => {
       }
 
       if (data.status === "success") {
-        setCredits(
-          data.creditsLeft === "unlimited" ? Infinity : data.creditsLeft,
-        );
+        const newCredits =
+          data.creditsLeft === "unlimited" ? Infinity : data.creditsLeft;
+        setCredits(newCredits);
+
+        // LocalStorage update karo taake refresh ke baad bhi sahi credit dikhe
+        const updatedUser = { ...user, credits: newCredits };
+        setUser(updatedUser);
+        localStorage.setItem("user", JSON.stringify(updatedUser));
       }
 
       setLoading(false);
@@ -877,7 +901,7 @@ const AppProvider = ({ children }) => {
         credits,
         setCredits,
         generateDesign,
-         gallery,
+        gallery,
         fetchGallery,
       }}
     >

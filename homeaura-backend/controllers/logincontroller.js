@@ -143,7 +143,7 @@ export const loginUser = async (req, res) => {
     if (!user.password) {
       return res.status(401).json({
         status: "error",
-        message: "This account uses Google login. Please sign in with Google.",
+        message: "This account uses Google login. Please login with Google.",
       });
     }
     const isPasswordCorrect = bcrypt.compareSync(password, user.password);
