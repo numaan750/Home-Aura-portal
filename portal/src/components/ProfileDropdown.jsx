@@ -219,7 +219,7 @@ const ProfileDropdown = () => {
               >
                 <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center flex-shrink-0">
                   <Image
-                    src="/svgs/log-out.svg"
+                    src="/svgs/Log-out.svg"
                     alt="Logout"
                     width={18}
                     height={18}
