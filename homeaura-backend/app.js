@@ -35,7 +35,7 @@ app.use("/api", generateRoutes);
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.get("/", (req, res) => {
-  res.send("Soulmate Backend is running");
+  res.send("Home-Aura Backend is running");
 });
 
 export default app;
