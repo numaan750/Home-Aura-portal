@@ -33,52 +33,52 @@ const styles = [
 ];
 
 const colors = [
-  { label: "Surprise Me", image: "/images/EXTERIOR/colours/Surprise-Me.png" },
+  { label: "Surprise Me", image: "/images/interior/colours/Surprise-Me.png" },
   {
     label: "Millennial Gray",
-    image: "/images/EXTERIOR/colours/Millennial-Gray.png",
+    image: "/images/interior/colours/Millennial-Gray.png",
   },
-  { label: "Forest Hues", image: "/images/EXTERIOR/colours/Forest-Hues.png" },
-  { label: "Neon Sunset", image: "/images/EXTERIOR/colours/Neon-Sunset.png" },
+  { label: "Forest Hues", image: "/images/interior/colours/Forest-Hues.png" },
+  { label: "Neon Sunset", image: "/images/interior/colours/Neon-Sunset.png" },
   {
     label: "Terracotta Mirage",
-    image: "/images/EXTERIOR/colours/Terracotta-Mirage.png",
+    image: "/images/interior/colours/Terracotta-Mirage.png",
   },
   {
     label: "Peach Orchard",
-    image: "/images/EXTERIOR/colours/Peach-Orchard.png",
+    image: "/images/interior/colours/Peach-Orchard.png",
   },
-  { label: "Urban Slate", image: "/images/EXTERIOR/colours/Urban-Slate.png" },
+  { label: "Urban Slate", image: "/images/interior/colours/Urban-Slate.png" },
   {
     label: "Fuschia Blossom",
-    image: "/images/EXTERIOR/colours/Fuschia-Blossom.png",
+    image: "/images/interior/colours/Fuschia-Blossom.png",
   },
-  { label: "Emerald Gem", image: "/images/EXTERIOR/colours/Emerald-Gem.png" },
+  { label: "Emerald Gem", image: "/images/interior/colours/Emerald-Gem.png" },
   {
     label: "Pastel Breeze",
-    image: "/images/EXTERIOR/colours/Pastel-Breeze.png",
+    image: "/images/interior/colours/Pastel-Breeze.png",
   },
-  { label: "Coastal Calm", image: "/images/EXTERIOR/colours/Coastal-Calm.png" },
+  { label: "Coastal Calm", image: "/images/interior/colours/Coastal-Calm.png" },
   {
     label: "Modern Rustic",
-    image: "/images/EXTERIOR/colours/Modern-Rustic.png",
+    image: "/images/interior/colours/Modern-Rustic.png",
   },
   {
     label: "Bronze Harmony",
-    image: "/images/EXTERIOR/colours/Bronze-Harmony.png",
+    image: "/images/interior/colours/Bronze-Harmony.png",
   },
-  { label: "Tech Frost", image: "/images/EXTERIOR/colours/Tech-Frost.png" },
-  { label: "Mocha Mood", image: "/images/EXTERIOR/colours/Mocha-Mood.png" },
-  { label: "Aloe Zen", image: "/images/EXTERIOR/colours/Aloe-Zen.png" },
-  { label: "Sunset Clay", image: "/images/EXTERIOR/colours/Sunset-Clay.png" },
-  { label: "Golden Hour", image: "/images/EXTERIOR/colours/Golden-Hour.png" },
+  { label: "Tech Frost", image: "/images/interior/colours/Tech-Frost.png" },
+  { label: "Mocha Mood", image: "/images/interior/colours/Mocha-Mood.png" },
+  { label: "Aloe Zen", image: "/images/interior/colours/Aloe-Zen.png" },
+  { label: "Sunset Clay", image: "/images/interior/colours/Sunset-Clay.png" },
+  { label: "Golden Hour", image: "/images/interior/colours/Golden-Hour.png" },
   {
     label: "Lavender Fields",
-    image: "/images/EXTERIOR/colours/Lavender-Fields.png",
+    image: "/images/interior/colours/Lavender-Fields.png",
   },
   {
     label: "Nordic Minimal",
-    image: "/images/EXTERIOR/colours/Nordic-Minimal.png",
+    image: "/images/interior/colours/Nordic-Minimal.png",
   },
 ];
 
