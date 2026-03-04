@@ -117,7 +117,7 @@ const SoulmateSidebar = () => {
                 onClick={() => {
                   handleSectionChange("home");
                   setActiveSubTab(null);
-                  setHomeResetCount((prev) => prev + 1); 
+                  setHomeResetCount((prev) => prev + 1);
                   setOpen(false);
                 }}
                 className={`group w-full text-left px-4 py-3 rounded-full transition-all cursor-pointer duration-200 flex items-center gap-3 ${
@@ -400,7 +400,7 @@ const SoulmateSidebar = () => {
                     {" "}
                     {activeSection === "home" && (
                       <Home
-                       key={homeResetCount}
+                        key={homeResetCount}
                         handleSectionChange={handleSectionChange}
                         // handlePremiumSection={handlePremiumSection}
                         handlePremiumSection={handleSectionChange}
@@ -408,11 +408,31 @@ const SoulmateSidebar = () => {
                         setActiveSubTab={setActiveSubTab}
                       />
                     )}
-                    {activeSection === "interior-design" && <Interior onMessageSent={() => setIsPremiumPopupOpen(true)} />}
-                     {activeSection === "exterior-design" && <Exterior onMessageSent={() => setIsPremiumPopupOpen(true)} />}
-                     {activeSection === "garden-design" && <Garden onMessageSent={() => setIsPremiumPopupOpen(true)} />}
-                     {activeSection === "floor-restyle" && <FloorRestyle onMessageSent={() => setIsPremiumPopupOpen(true)} />}
-                     {activeSection === "repaint" && <Repaint onMessageSent={() => setIsPremiumPopupOpen(true)} />}
+                    {activeSection === "interior-design" && (
+                      <Interior
+                        onMessageSent={() => setIsPremiumPopupOpen(true)}
+                      />
+                    )}
+                    {activeSection === "exterior-design" && (
+                      <Exterior
+                        onMessageSent={() => setIsPremiumPopupOpen(true)}
+                      />
+                    )}
+                    {activeSection === "garden-design" && (
+                      <Garden
+                        onMessageSent={() => setIsPremiumPopupOpen(true)}
+                      />
+                    )}
+                    {activeSection === "floor-restyle" && (
+                      <FloorRestyle
+                        onMessageSent={() => setIsPremiumPopupOpen(true)}
+                      />
+                    )}
+                    {activeSection === "repaint" && (
+                      <Repaint
+                        onMessageSent={() => setIsPremiumPopupOpen(true)}
+                      />
+                    )}
                     {activeSection === "explore" && (
                       <Explore
                         onMessageSent={() => setHasMessages(true)}
@@ -422,8 +442,7 @@ const SoulmateSidebar = () => {
                     {activeSection === "my-gallery" && (
                       <MyGallery key={galleryResetCount} />
                     )}
-                  </div>                     
-
+                  </div>
                   {/* {activeSection === "premium-plans" && <PremiumPlans />} */}
                 </div>
               </div>

@@ -32,7 +32,8 @@ const AI_TOOLS = [
     img: "/images/Explore-Ai/Floor-ReStyle.png",
   },
 ];
-export const EXPLORE_IMAGES = [  {
+export const EXPLORE_IMAGES = [
+  {
     id: 1,
     src: "/images/Exlore/interior-home-aura-1.png",
     alt: "Interior 1",

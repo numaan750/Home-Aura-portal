@@ -2,8 +2,9 @@ import Generation from "../models/Generation.model.js";
 
 export const getGallery = async (req, res) => {
   try {
-    const generations = await Generation.find({ userId: req.user._id })
-      .sort({ createdAt: -1 });
+    const generations = await Generation.find({ userId: req.user._id }).sort({
+      createdAt: -1,
+    });
 
     res.status(200).json({
       status: "success",

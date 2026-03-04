@@ -130,24 +130,6 @@ const ProfileDropdown = () => {
             </div>
 
             <div className="py-1 sm:py-2">
-              {/* <button className="w-full cursor-pointer px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 hover:bg-gradient-to-r from-[#F4A261] to-[#E07A5F] transition-all duration-200 group">
-                <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center flex-shrink-0">
-                  <Image
-                    src="/svgs/About-Us.svg"
-                    alt="Terms of Use"
-                    width={18}
-                    height={18}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-                <Link
-                  href="https://www.aisoulmatedrawings.com/conditions"
-                  target="_blank"
-                  className="text-[#1E1E1E] font-medium text-xs sm:text-sm"
-                >
-                  About Us
-                </Link>
-              </button> */}
               <button className="w-full cursor-pointer px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 hover:bg-gradient-to-r from-[#F4A261] to-[#E07A5F] transition-all duration-200 group">
                 <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center flex-shrink-0">
                   <Image

@@ -79,6 +79,26 @@ const InteriorDesign = ({ onMessageSent }) => {
   const [showResult, setShowResult] = useState(false);
   const fileInputRef = useRef(null);
   const styleScrollRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (!file || !file.type.startsWith("image/")) return;
+    setUploadedFile(file);
+    setUploadedImage(URL.createObjectURL(file));
+    setGeneratedImage(null);
+  };
 
   const scrollToSelected = (ref, selectedLabel, items) => {
     if (!ref.current) return;
@@ -114,13 +134,10 @@ const InteriorDesign = ({ onMessageSent }) => {
     setUploadedImage(URL.createObjectURL(file));
     setGeneratedImage(null);
   };
-
-  // Replace old handleGenerate with:
   const handleGenerate = async () => {
     if (!uploadedFile) return;
 
     if (!isPremium && credits <= 0) {
-      // Premium popup trigger karo - parent ko batao
       onMessageSent?.();
       return;
     }
@@ -190,6 +207,9 @@ const InteriorDesign = ({ onMessageSent }) => {
       </div>
       <div
         onClick={openFilePicker}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
         className={`flex flex-col items-center justify-center bg-gradient-to-b from-[#F4A261]/20 to-[#E07A5F]/20 border-2 border-[#F4A261] rounded-3xl p-15 mb-4 ${
           uploadedImage ? "" : "cursor-pointer"
         }`}

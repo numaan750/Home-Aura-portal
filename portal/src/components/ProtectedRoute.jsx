@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-amber-50">
-        <div className="text-white text-xl">Please Wait.......</div>
+        <div className="text-black text-xl">Please Wait.......</div>
       </div>
     );
   }
@@ -25,7 +25,7 @@ const ProtectedRoute = ({ children }) => {
   if (!authenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-amber-50">
-        <div className="text-white text-xl">Please Wait.......</div>
+        <div className="text-black text-xl">Please Wait.......</div>
       </div>
     );
   }

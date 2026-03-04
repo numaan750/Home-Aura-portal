@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
-
 export default function AuthCallback() {
   const searchParams = useSearchParams();
 
@@ -81,8 +80,8 @@ export default function AuthCallback() {
     <div className="min-h-screen flex items-center justify-center bg-amber-50">
       <div className="text-center">
         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#AABFFF] mx-auto mb-4"></div>
-        <p className="text-white text-xl">Processing authentication...</p>
-        <p className="text-gray-400 text-sm mt-2">
+        <p className="text-black text-xl">Processing authentication...</p>
+        <p className="text-gray-600 text-sm mt-2">
           This window will close automatically
         </p>
       </div>

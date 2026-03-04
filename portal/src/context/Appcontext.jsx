@@ -360,50 +360,6 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // const sendAiChat = async (messages, type = "any_dream", onChunk) => {
-  //   const response = await fetch(`${API_URL}/api/ai/chat`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify({ messages, type }),
-  //   });
-
-  //   if (!response.ok) {
-  //     const data = await response.json();
-  //     throw new Error(data.message || "AI chat failed");
-  //   }
-
-  //   const reader = response.body.getReader();
-  //   const decoder = new TextDecoder();
-  //   let fullText = "";
-
-  //   while (true) {
-  //     const { done, value } = await reader.read();
-  //     if (done) break;
-
-  //     const chunk = decoder.decode(value);
-  //     const lines = chunk.split("\n");
-
-  //     for (const line of lines) {
-  //       if (line.startsWith("data: ")) {
-  //         const data = line.slice(6);
-  //         if (data === "[DONE]") break;
-  //         try {
-  //           const parsed = JSON.parse(data);
-  //           if (parsed.token) {
-  //             fullText += parsed.token;
-  //             onChunk?.(parsed.token, fullText);
-  //           }
-  //         } catch {}
-  //       }
-  //     }
-  //   }
-
-  //   return fullText;
-  // };
-
   const createShareableLink = async (shareData) => {
     try {
       setLoading(true);
@@ -628,8 +584,6 @@ const AppProvider = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-
-      // Blob URL ko base64 mein convert karo
       let base64Image = null;
       if (
         designData.uploadedImage &&
@@ -667,8 +621,6 @@ const AppProvider = ({ children }) => {
         const newCredits =
           data.creditsLeft === "unlimited" ? Infinity : data.creditsLeft;
         setCredits(newCredits);
-
-        // LocalStorage update karo taake refresh ke baad bhi sahi credit dikhe
         const updatedUser = { ...user, credits: newCredits };
         setUser(updatedUser);
         localStorage.setItem("user", JSON.stringify(updatedUser));
@@ -699,162 +651,6 @@ const AppProvider = ({ children }) => {
       console.error("Gallery fetch error:", error);
     }
   };
-
-  // const createSoulmate = async (soulmateData) => {
-  //   try {
-  //     setError(null);
-  //     setLoading(true);
-
-  //     const response = await fetch(`${API_URL}/api/soulmate/create`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //       body: JSON.stringify(soulmateData),
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (!response.ok) {
-  //       if (data.needsPremium) {
-  //         return { needsPremium: true };
-  //       }
-  //       throw new Error(data.message || "Soulmate creation failed");
-  //     }
-
-  //     setSoulmateCache(data.data);
-  //     localStorage.setItem("soulmateCache", JSON.stringify(data.data));
-
-  //     return data;
-  //   } catch (error) {
-  //     console.error("Create soulmate error:", error);
-  //     setError(error.message || "Failed to create soulmate.");
-  //     throw error;
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // const getUserSoulmate = async () => {
-  //   try {
-  //     const cachedSoulmate = localStorage.getItem("soulmateCache");
-  //     if (cachedSoulmate) {
-  //       const parsed = JSON.parse(cachedSoulmate);
-  //       setSoulmateCache(parsed);
-  //       return parsed;
-  //     }
-  //     setLoading(true);
-  //     setError(null);
-
-  //     const response = await fetch(`${API_URL}/api/soulmate/my-soulmate`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (data.status === "error") {
-  //       setSoulmateCache(null);
-  //       localStorage.removeItem("soulmateCache");
-  //       setLoading(false);
-  //       return null;
-  //     }
-
-  //     setSoulmateCache(data.data);
-  //     localStorage.setItem("soulmateCache", JSON.stringify(data.data));
-
-  //     setLoading(false);
-  //     return data.data;
-  //   } catch (error) {
-  //     console.error("Get soulmate error:", error);
-  //     setLoading(false);
-  //     return null;
-  //   }
-  // };
-
-  // const deleteSoulmate = async () => {
-  //   try {
-  //     setLoading(true);
-  //     setError(null);
-
-  //     const response = await fetch(`${API_URL}/api/soulmate/delete`, {
-  //       method: "DELETE",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (data.status !== "success") {
-  //       setError(data.message);
-  //       throw new Error(data.message);
-  //     }
-  //     setSoulmateCache(null);
-  //     localStorage.removeItem("soulmateCache");
-  //     setLoading(false);
-  //     return data;
-  //   } catch (error) {
-  //     console.error("Delete soulmate error:", error);
-  //     setError("Failed to delete soulmate.");
-  //     setLoading(false);
-  //     throw error;
-  //   }
-  // };
-
-  // const chatWithSoulmate = async (messages, soulmateData, onChunk) => {
-  //   const response = await fetch(`${API_URL}/api/soulmate/chat`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify({
-  //       messages,
-  //       soulmateData,
-  //     }),
-  //   });
-
-  //   if (!response.ok) {
-  //     const data = await response.json();
-  //     throw new Error(data.message || "Chat failed");
-  //   }
-
-  //   const reader = response.body.getReader();
-  //   const decoder = new TextDecoder();
-  //   let fullText = "";
-
-  //   while (true) {
-  //     const { done, value } = await reader.read();
-  //     if (done) break;
-
-  //     const chunk = decoder.decode(value);
-  //     const lines = chunk.split("\n");
-
-  //     for (const line of lines) {
-  //       if (line.startsWith("data: ")) {
-  //         const data = line.slice(6);
-  //         if (data === "[DONE]") break;
-
-  //         try {
-  //           const parsed = JSON.parse(data);
-  //           if (parsed.token) {
-  //             fullText += parsed.token;
-  //             onChunk?.(parsed.token, fullText);
-  //           }
-  //         } catch {}
-  //       }
-  //     }
-  //   }
-
-  //   return fullText;
-  // };
-
   return (
     <AppContext.Provider
       value={{
@@ -883,16 +679,11 @@ const AppProvider = ({ children }) => {
         requestPasswordReset,
         verifyResetCode,
         resetPassword,
-        // sendAiChat,
         createShareableLink,
         getSharedContent,
         getUserSharedContent,
         deleteSharedContent,
         loginWithGoogle,
-        // createSoulmate,
-        // getUserSoulmate,
-        // deleteSoulmate,
-        // chatWithSoulmate,
         soulmateCache,
         setSoulmateCache,
         isPremium,
