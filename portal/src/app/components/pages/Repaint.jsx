@@ -208,7 +208,7 @@ const InteriorDesign = ({ onMessageSent }) => {
         selectedRoom={selectedRoom}
         selectedColor={selectedColor}
         selectedRoomImage={selectedRoomImage}
-        selectedColorImage={selectedColorHex} 
+        selectedColorImage={selectedColorHex}
         onBack={() => {
           setShowResult(false);
           setGeneratedImage(null);
@@ -409,7 +409,7 @@ const InteriorDesign = ({ onMessageSent }) => {
         onChange={(e) => {
           setPickedColor(e.target.value);
           setSelectedColor("Pick Color");
-          setSelectedColorHex(e.target.value); 
+          setSelectedColorHex(e.target.value);
         }}
         style={{
           position: "fixed",

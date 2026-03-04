@@ -17,151 +17,71 @@ const rooms = [
 ];
 
 const styles = [
-  { label: "Surprise Me", image: "/images/Garden/style/surprise-me.png" },
-  { label: "Modern", image: "/images/Garden/Style/modern.png" },
-  { label: "Contemporary", image: "/images/Garden/Style/contemporary.png" },
-  { label: "Minimalist", image: "/images/Garden/Style/minimalist.png" },
-  { label: "Traditional", image: "/images/Garden/Style/traditional.png" },
-  { label: "Transitional", image: "/images/Garden/Style/Transitiona.png" },
-  { label: "Scandinavian", image: "/images/Garden/Style/scandinavian.png" },
-  { label: "Industrial", image: "/images/Garden/Style/industrial.png" },
-  { label: "Bohemian", image: "/images/Garden/Style/bohemian.png" },
-  { label: "Rustic", image: "/images/Garden/Style/rustic.png" },
-  { label: "Coastal", image: "/images/Garden/Style/coastal.png" },
-  { label: "Eclectic", image: "/images/Garden/Style/eclectic.png" },
-  { label: "Art Deco", image: "/images/Garden/Style/art-deco.png" },
-  { label: "Japandi", image: "/images/Garden/Style/japandi.png" },
-  { label: "Urban", image: "/images/Garden/Style/urban.png" },
+  { label: "Surprise Me", image: "/images/Garden/style/Surprise-Me.png" },
+  { label: "Modern", image: "/images/Garden/Style/Modern.png" },
+  { label: "Contemporary", image: "/images/Garden/Style/Contemporary.png" },
+  { label: "Minimalist", image: "/images/Garden/Style/Minimalist.png" },
+  { label: "Traditional", image: "/images/Garden/Style/Traditional.png" },
+  { label: "Transitional", image: "/images/Garden/Style/Transitional.png" },
+  { label: "Scandinavian", image: "/images/Garden/Style/Scandinavian.png" },
+  { label: "Industrial", image: "/images/Garden/Style/Industrial.png" },
+  { label: "Bohemian", image: "/images/Garden/Style/Bohemian.png" },
+  { label: "Rustic", image: "/images/Garden/Style/Rustic.png" },
+  { label: "Coastal", image: "/images/Garden/Style/Coastal.png" },
+  { label: "Eclectic", image: "/images/Garden/Style/Eclectic.png" },
+  { label: "Art Deco", image: "/images/Garden/Style/Art-Deco.png" },
+  { label: "Japandi", image: "/images/Garden/Style/Japandi.png" },
+  { label: "Urban", image: "/images/Garden/Style/Urban.png" },
   { label: "Luxury / Glam", image: "/images/Garden/Style/Glam.png" },
 ];
 
-// const colors = [
-//   {
-//     label: "Surprise Me",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Millennial Gray",
-//     swatches: ["#9E9E9E", "#BDBDBD", "#757575", "#424242"],
-//   },
-//   {
-//     label: "Forest Hues",
-//     swatches: ["#2D6A4F", "#74C69D", "#B7E4C7", "#1B4332"],
-//   },
-//   {
-//     label: "Neon Sunset",
-//     swatches: ["#FF006E", "#FB5607", "#FFBE0B", "#8338EC"],
-//   },
-//   {
-//     label: "Terracotta Mirage",
-//     swatches: ["#C97D4E", "#E9C46A", "#F4A261", "#E76F51"],
-//   },
-//   {
-//     label: "Peach Orchard",
-//     swatches: ["#FFDDD2", "#FFBBA6", "#FF8C61", "#E05D2B"],
-//   },
-//   {
-//     label: "Urban Slate",
-//     swatches: ["#2B2D42", "#8D99AE", "#EDF2F4", "#EF233C"],
-//   },
-//   {
-//     label: "Fuschia Blossom",
-//     swatches: ["#FF00FF", "#DA00FF", "#A100FF", "#FF6FFF"],
-//   },
-//   {
-//     label: "Emerald Gem",
-//     swatches: ["#004E64", "#00A5CF", "#9FFFCB", "#25A18E"],
-//   },
-//   {
-//     label: "Pastel Breeze",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Coastal Calm",
-//     swatches: ["#C2B280", "#E8D8B0", "#A0906D", "#7A6950"],
-//   },
-//   {
-//     label: "Modern Rustic",
-//     swatches: ["#E6CCFF", "#C89FE0", "#9B59B6", "#6C3483"],
-//   },
-//   {
-//     label: "Bronze Harmony",
-//     swatches: ["#0077B6", "#00B4D8", "#90E0EF", "#CAF0F8"],
-//   },
-//   {
-//     label: "Tech Frost",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Mocha Mood",
-//     swatches: ["#FFD700", "#FFA500", "#FF4500", "#FF0000"],
-//   },
-//   { label: "Aloe Zen", swatches: ["#1E1E1E", "#2B2B2B", "#3C3C3C", "#4D4D4D"] },
-//   {
-//     label: "Sunset Clay",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Golden Hour",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Lavender Fields",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Nordic Minimal",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-// ];
-
 const colors = [
-  { label: "Surprise Me", image: "/images/interior/colours/surprise-me.png" },
+  { label: "Surprise Me", image: "/images/interior/colours/Surprise-Me.png" },
   {
     label: "Millennial Gray",
-    image: "/images/interior/colours/millennial-gray.png",
+    image: "/images/interior/colours/Millennial-Gray.png",
   },
-  { label: "Forest Hues", image: "/images/interior/colours/forest-hues.png" },
-  { label: "Neon Sunset", image: "/images/interior/colours/neon-sunset.png" },
+  { label: "Forest Hues", image: "/images/interior/colours/Forest-Hues.png" },
+  { label: "Neon Sunset", image: "/images/interior/colours/Neon-Sunset.png" },
   {
     label: "Terracotta Mirage",
-    image: "/images/interior/colours/terracotta-mirage.png",
+    image: "/images/interior/colours/Terracotta-Mirage.png",
   },
   {
     label: "Peach Orchard",
-    image: "/images/interior/colours/peach-orchard.png",
+    image: "/images/interior/colours/Peach-Orchard.png",
   },
-  { label: "Urban Slate", image: "/images/interior/colours/urban-slate.png" },
+  { label: "Urban Slate", image: "/images/interior/colours/Urban-Slate.png" },
   {
     label: "Fuschia Blossom",
-    image: "/images/interior/colours/fuschia-blossom.png",
+    image: "/images/interior/colours/Fuschia-Blossom.png",
   },
-  { label: "Emerald Gem", image: "/images/interior/colours/emerald-gem.png" },
+  { label: "Emerald Gem", image: "/images/interior/colours/Emerald-Gem.png" },
   {
     label: "Pastel Breeze",
-    image: "/images/interior/colours/pastel-breeze.png",
+    image: "/images/interior/colours/Pastel-Breeze.png",
   },
-  { label: "Coastal Calm", image: "/images/interior/colours/coastal-calm.png" },
+  { label: "Coastal Calm", image: "/images/interior/colours/Coastal-Calm.png" },
   {
     label: "Modern Rustic",
-    image: "/images/interior/colours/modern-rustic.png",
+    image: "/images/interior/colours/Modern-Rustic.png",
   },
   {
     label: "Bronze Harmony",
-    image: "/images/interior/colours/bronze-harmony.png",
+    image: "/images/interior/colours/Bronze-Harmony.png",
   },
-  { label: "Tech Frost", image: "/images/interior/colours/tech-frost.png" },
-  { label: "Mocha Mood", image: "/images/interior/colours/mocha-mood.png" },
-  { label: "Aloe Zen", image: "/images/interior/colours/aloe-zen.png" },
-  { label: "Sunset Clay", image: "/images/interior/colours/sunset-clay.png" },
-  { label: "Golden Hour", image: "/images/interior/colours/golden-hour.png" },
+  { label: "Tech Frost", image: "/images/interior/colours/Tech-Frost.png" },
+  { label: "Mocha Mood", image: "/images/interior/colours/Mocha-Mood.png" },
+  { label: "Aloe Zen", image: "/images/interior/colours/Aloe-Zen.png" },
+  { label: "Sunset Clay", image: "/images/interior/colours/Sunset-Clay.png" },
+  { label: "Golden Hour", image: "/images/interior/colours/Golden-Hour.png" },
   {
     label: "Lavender Fields",
-    image: "/images/interior/colours/lavender-fields.png",
+    image: "/images/interior/colours/Lavender-Fields.png",
   },
   {
     label: "Nordic Minimal",
-    image: "/images/interior/colours/nordic-minimal.png",
+    image: "/images/interior/colours/Nordic-Minimal.png",
   },
 ];
 
@@ -235,8 +155,6 @@ const InteriorDesign = ({ onMessageSent }) => {
     setUploadedImage(URL.createObjectURL(file));
     setGeneratedImage(null);
   };
-
-  // Replace old handleGenerate with:
   const handleGenerate = async () => {
     if (!uploadedFile) return;
 

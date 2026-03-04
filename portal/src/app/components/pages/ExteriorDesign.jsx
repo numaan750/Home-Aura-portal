@@ -19,146 +19,66 @@ const rooms = [
 ];
 
 const styles = [
-  { label: "Surprise Me", image: "/images/EXTERIOR/Style/surprise-me.png" },
-  { label: "Modern", image: "/images/EXTERIOR/Style/modern.png" },
-  { label: "Mediterranean", image: "/images/EXTERIOR/Style/mediterranean.png" },
-  { label: "Minimalist", image: "/images/EXTERIOR/Style/minimalist.png" },
-  { label: "Rustic", image: "/images/EXTERIOR/Style/rustic.png" },
-  { label: "Scandinavian", image: "/images/EXTERIOR/Style/scandinavian.png" },
-  { label: "Industrial", image: "/images/EXTERIOR/Style/industrial.png" },
-  { label: "Colonial", image: "/images/EXTERIOR/Style/colonial.png" },
-  { label: "Contemporary", image: "/images/EXTERIOR/Style/contemporary.png" },
-  { label: "Tropical", image: "/images/EXTERIOR/Style/tropical.png" },
-  { label: "Japanese Zen", image: "/images/EXTERIOR/Style/japanese-zen.png" },
+  { label: "Surprise Me", image: "/images/EXTERIOR/Style/Surprise-Me.png" },
+  { label: "Modern", image: "/images/EXTERIOR/Style/Modern.png" },
+  { label: "Mediterranean", image: "/images/EXTERIOR/Style/Mediterranean.png" },
+  { label: "Minimalist", image: "/images/EXTERIOR/Style/Minimalist.png" },
+  { label: "Rustic", image: "/images/EXTERIOR/Style/Rustic.png" },
+  { label: "Scandinavian", image: "/images/EXTERIOR/Style/Scandinavian.png" },
+  { label: "Industrial", image: "/images/EXTERIOR/Style/Industrial.png" },
+  { label: "Colonial", image: "/images/EXTERIOR/Style/Colonial.png" },
+  { label: "Contemporary", image: "/images/EXTERIOR/Style/Contemporary.png" },
+  { label: "Tropical", image: "/images/EXTERIOR/Style/Tropical.png" },
+  { label: "Japanese Zen", image: "/images/EXTERIOR/Style/Japanese-Zen.png" },
 ];
 
-// const colors = [
-//   {
-//     label: "Surprise Me",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Millennial Gray",
-//     swatches: ["#9E9E9E", "#BDBDBD", "#757575", "#424242"],
-//   },
-//   {
-//     label: "Forest Hues",
-//     swatches: ["#2D6A4F", "#74C69D", "#B7E4C7", "#1B4332"],
-//   },
-//   {
-//     label: "Neon Sunset",
-//     swatches: ["#FF006E", "#FB5607", "#FFBE0B", "#8338EC"],
-//   },
-//   {
-//     label: "Terracotta Mirage",
-//     swatches: ["#C97D4E", "#E9C46A", "#F4A261", "#E76F51"],
-//   },
-//   {
-//     label: "Peach Orchard",
-//     swatches: ["#FFDDD2", "#FFBBA6", "#FF8C61", "#E05D2B"],
-//   },
-//   {
-//     label: "Urban Slate",
-//     swatches: ["#2B2D42", "#8D99AE", "#EDF2F4", "#EF233C"],
-//   },
-//   {
-//     label: "Fuschia Blossom",
-//     swatches: ["#FF00FF", "#DA00FF", "#A100FF", "#FF6FFF"],
-//   },
-//   {
-//     label: "Emerald Gem",
-//     swatches: ["#004E64", "#00A5CF", "#9FFFCB", "#25A18E"],
-//   },
-//   {
-//     label: "Pastel Breeze",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Coastal Calm",
-//     swatches: ["#C2B280", "#E8D8B0", "#A0906D", "#7A6950"],
-//   },
-//   {
-//     label: "Modern Rustic",
-//     swatches: ["#E6CCFF", "#C89FE0", "#9B59B6", "#6C3483"],
-//   },
-//   {
-//     label: "Bronze Harmony",
-//     swatches: ["#0077B6", "#00B4D8", "#90E0EF", "#CAF0F8"],
-//   },
-//   {
-//     label: "Tech Frost",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Mocha Mood",
-//     swatches: ["#FFD700", "#FFA500", "#FF4500", "#FF0000"],
-//   },
-//   { label: "Aloe Zen", swatches: ["#1E1E1E", "#2B2B2B", "#3C3C3C", "#4D4D4D"] },
-//   {
-//     label: "Sunset Clay",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Golden Hour",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Lavender Fields",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-//   {
-//     label: "Nordic Minimal",
-//     swatches: ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF"],
-//   },
-// ];
-
 const colors = [
-  { label: "Surprise Me", image: "/images/interior/colours/surprise-me.png" },
+  { label: "Surprise Me", image: "/images/EXTERIOR/colours/Surprise-Me.png" },
   {
     label: "Millennial Gray",
-    image: "/images/interior/colours/millennial-gray.png",
+    image: "/images/EXTERIOR/colours/Millennial-Gray.png",
   },
-  { label: "Forest Hues", image: "/images/interior/colours/forest-hues.png" },
-  { label: "Neon Sunset", image: "/images/interior/colours/neon-sunset.png" },
+  { label: "Forest Hues", image: "/images/EXTERIOR/colours/Forest-Hues.png" },
+  { label: "Neon Sunset", image: "/images/EXTERIOR/colours/Neon-Sunset.png" },
   {
     label: "Terracotta Mirage",
-    image: "/images/interior/colours/terracotta-mirage.png",
+    image: "/images/EXTERIOR/colours/Terracotta-Mirage.png",
   },
   {
     label: "Peach Orchard",
-    image: "/images/interior/colours/peach-orchard.png",
+    image: "/images/EXTERIOR/colours/Peach-Orchard.png",
   },
-  { label: "Urban Slate", image: "/images/interior/colours/urban-slate.png" },
+  { label: "Urban Slate", image: "/images/EXTERIOR/colours/Urban-Slate.png" },
   {
     label: "Fuschia Blossom",
-    image: "/images/interior/colours/fuschia-blossom.png",
+    image: "/images/EXTERIOR/colours/Fuschia-Blossom.png",
   },
-  { label: "Emerald Gem", image: "/images/interior/colours/emerald-gem.png" },
+  { label: "Emerald Gem", image: "/images/EXTERIOR/colours/Emerald-Gem.png" },
   {
     label: "Pastel Breeze",
-    image: "/images/interior/colours/pastel-breeze.png",
+    image: "/images/EXTERIOR/colours/Pastel-Breeze.png",
   },
-  { label: "Coastal Calm", image: "/images/interior/colours/coastal-calm.png" },
+  { label: "Coastal Calm", image: "/images/EXTERIOR/colours/Coastal-Calm.png" },
   {
     label: "Modern Rustic",
-    image: "/images/interior/colours/modern-rustic.png",
+    image: "/images/EXTERIOR/colours/Modern-Rustic.png",
   },
   {
     label: "Bronze Harmony",
-    image: "/images/interior/colours/bronze-harmony.png",
+    image: "/images/EXTERIOR/colours/Bronze-Harmony.png",
   },
-  { label: "Tech Frost", image: "/images/interior/colours/tech-frost.png" },
-  { label: "Mocha Mood", image: "/images/interior/colours/mocha-mood.png" },
-  { label: "Aloe Zen", image: "/images/interior/colours/aloe-zen.png" },
-  { label: "Sunset Clay", image: "/images/interior/colours/sunset-clay.png" },
-  { label: "Golden Hour", image: "/images/interior/colours/golden-hour.png" },
+  { label: "Tech Frost", image: "/images/EXTERIOR/colours/Tech-Frost.png" },
+  { label: "Mocha Mood", image: "/images/EXTERIOR/colours/Mocha-Mood.png" },
+  { label: "Aloe Zen", image: "/images/EXTERIOR/colours/Aloe-Zen.png" },
+  { label: "Sunset Clay", image: "/images/EXTERIOR/colours/Sunset-Clay.png" },
+  { label: "Golden Hour", image: "/images/EXTERIOR/colours/Golden-Hour.png" },
   {
     label: "Lavender Fields",
-    image: "/images/interior/colours/lavender-fields.png",
+    image: "/images/EXTERIOR/colours/Lavender-Fields.png",
   },
   {
     label: "Nordic Minimal",
-    image: "/images/interior/colours/nordic-minimal.png",
+    image: "/images/EXTERIOR/colours/Nordic-Minimal.png",
   },
 ];
 
@@ -234,12 +154,10 @@ const InteriorDesign = ({ onMessageSent }) => {
     setGeneratedImage(null);
   };
 
-  // Replace old handleGenerate with:
   const handleGenerate = async () => {
     if (!uploadedFile) return;
 
     if (!isPremium && credits <= 0) {
-      // Premium popup trigger karo - parent ko batao
       onMessageSent?.();
       return;
     }
@@ -528,7 +446,7 @@ const InteriorDesign = ({ onMessageSent }) => {
         onClick={handleGenerate}
         disabled={!canGenerate}
         className={`w-full py-2.5 rounded-full font-semibold text-[24px] text-[#F3F3F3] transition mt-4 flex items-center justify-center gap-2
-  ${canGenerate ? "bg-gradient-to-r from-[#F4A261] to-[#E07A5F] cursor-pointer" : "bg-gray-300 cursor-not-allowed"}`}
+         ${canGenerate ? "bg-gradient-to-r from-[#F4A261] to-[#E07A5F] cursor-pointer" : "bg-gray-300 cursor-not-allowed"}`}
       >
         <>
           <Image
