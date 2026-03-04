@@ -63,7 +63,7 @@ const colors = [
     label: "Fuschia Blossom",
     image: "/images/interior/colours/Fuschia-Blossom.png",
   },
-  { label: "Emerald Gem", image: "/images/interior/colours/emerald-gem.png" },   //ya rahta hy
+  { label: "Emerald Gem", image: "/images/interior/colours/Emerald-Gem.png" },   //ya rahta hy
   {
     label: "Pastel Breeze",
     image: "/images/interior/colours/Pastel-Breeze.png",
