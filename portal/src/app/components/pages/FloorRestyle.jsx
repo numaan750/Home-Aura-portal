@@ -5,47 +5,47 @@ import { useState, useRef, useContext } from "react";
 import GeneratedResult from "./GeneratedResult";
 import HomeAuraLoadingScreen from "../HomeAuraLoadingScreen";
 const styles = [
-  { label: "Surprise Me", image: "/images/Floor/style/Surprise-Me.png" },
+  { label: "Surprise Me", image: "/images/FLOOR/Style/Surprise-Me.png" },
   {
     label: "Hardwood Flooring",
-    image: "/images/Floor/style/Hardwood-Flooring.png",
+    image: "/images/FLOOR/Style/Hardwood-Flooring.png",
   },
   {
     label: "Engineered Wood",
-    image: "/images/Floor/style/Engineered-Wood.png",
+    image: "/images/FLOOR/Style/Engineered-Wood.png",
   },
   {
     label: "Laminate Flooring",
-    image: "/images/Floor/style/Laminate-Flooring.png",
+    image: "/images/FLOOR/Style/Laminate-Flooring.png",
   },
-  { label: "Vinyl Flooring", image: "/images/Floor/style/Vinyl-Flooring.png" },
+  { label: "Vinyl Flooring", image: "/images/FLOOR/Style/Vinyl-Flooring.png" },
   {
     label: "Marble Flooring",
-    image: "/images/Floor/style/Marble-Flooring.png",
+    image: "/images/FLOOR/Style/Marble-Flooring.png",
   },
-  { label: "Ceramic Tiles", image: "/images/Floor/style/Ceramic-Tiles.png" },
+  { label: "Ceramic Tiles", image: "/images/FLOOR/Style/Ceramic-Tiles.png" },
   {
     label: "Porcelain Tiles",
-    image: "/images/Floor/style/Porcelain-Tiles.png",
+    image: "/images/FLOOR/Style/Porcelain-Tiles.png",
   },
   {
     label: "Terrazzo Flooring",
-    image: "/images/Floor/style/Terrazzo-Flooring.png",
+    image: "/images/FLOOR/Style/Terrazzo-Flooring.png",
   },
   {
     label: "Concrete Flooring",
-    image: "/images/Floor/style/Concrete-Flooring.png",
+    image: "/images/FLOOR/Style/Concrete-Flooring.png",
   },
   {
     label: "Carpet Flooring",
-    image: "/images/Floor/style/Carpet-Flooring.png",
+    image: "/images/FLOOR/Style/Carpet-Flooring.png",
   },
   {
     label: "Bamboo Flooring",
-    image: "/images/Floor/style/Bamboo-Flooring.png",
+    image: "/images/FLOOR/Style/Bamboo-Flooring.png",
   },
-  { label: "Cork Flooring", image: "/images/Floor/style/Cork-Flooring.png" },
-  { label: "Stone Flooring", image: "/images/Floor/style/Stone-Flooring.png" },
+  { label: "Cork Flooring", image: "/images/FLOOR/Style/Cork-Flooring.png" },
+  { label: "Stone Flooring", image: "/images/FLOOR/Style/Stone-Flooring.png" },
 ];
 
 const ViewAllPopup = ({ title, children, onClose }) => (
@@ -72,8 +72,8 @@ const InteriorDesign = ({ onMessageSent }) => {
   const [generatedImage, setGeneratedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
-const [selectedStyle, setSelectedStyle] = useState(null);
-const [selectedStyleImage, setSelectedStyleImage] = useState(null);
+  const [selectedStyle, setSelectedStyle] = useState(null);
+  const [selectedStyleImage, setSelectedStyleImage] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [popup, setPopup] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -133,7 +133,7 @@ const [selectedStyleImage, setSelectedStyleImage] = useState(null);
       style: selectedStyle,
       color: selectedColor,
       uploadedImage: uploadedImage,
-       styleImage: selectedStyleImage,
+      styleImage: selectedStyleImage,
     });
 
     if (result?.needsPremium) {
@@ -244,7 +244,9 @@ const [selectedStyleImage, setSelectedStyleImage] = useState(null);
       </div>
       <div>
         <div className="flex items-center justify-between  mb-4">
-          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">Select Style</h4>
+          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">
+            Select Style
+          </h4>
           <button
             onClick={() => setPopup("style")}
             className="text-[#F4A261] text-[13px] font-medium cursor-pointer"
@@ -259,10 +261,10 @@ const [selectedStyleImage, setSelectedStyleImage] = useState(null);
           {styles.map((s) => (
             <button
               key={s.label}
-onClick={() => {
-  setSelectedStyle(s.label);
-  setSelectedStyleImage(s.image);
-}}
+              onClick={() => {
+                setSelectedStyle(s.label);
+                setSelectedStyleImage(s.image);
+              }}
               className="flex flex-col items-center gap-1 cursor-pointer w-[88px] flex-none snap-start"
             >
               <div
@@ -315,11 +317,11 @@ onClick={() => {
               <button
                 key={s.label}
                 onClick={() => {
-  setSelectedStyle(s.label);
-  setSelectedStyleImage(s.image);
-  setPopup(null);
-  scrollToSelected(styleScrollRef, s.label, styles);
-}}
+                  setSelectedStyle(s.label);
+                  setSelectedStyleImage(s.image);
+                  setPopup(null);
+                  scrollToSelected(styleScrollRef, s.label, styles);
+                }}
                 className="flex flex-col items-center gap-1 cursor-pointer"
               >
                 <div
