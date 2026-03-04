@@ -19,6 +19,9 @@ const MyGallery = () => {
         generatedImage={selectedItem.imageUrl}
         uploadedImage={selectedItem.uploadedImage}
         selectedRoom={selectedItem.roomType}
+        selectedRoomImage={selectedItem.roomTypeImage}
+        selectedStyleImage={selectedItem.styleImage}
+        selectedColorImage={selectedItem.colorImage}
         selectedStyle={selectedItem.style}
         selectedColor={selectedItem.color}
         onBack={() => setSelectedItem(null)}
@@ -70,7 +73,7 @@ const MyGallery = () => {
                   {item.designType}
                 </span>
               </div> */}
-            </div> 
+            </div>
           ))}
         </div>
       )}

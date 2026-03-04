@@ -13,7 +13,16 @@ export const generateImage = async (req, res) => {
         message: "No credits left. Please upgrade to premium.",
       });
     }
-    const { roomType, style, color, designType, uploadedImage } = req.body;
+    const {
+      roomType,
+      style,
+      color,
+      designType,
+      uploadedImage,
+      roomTypeImage,
+      styleImage,
+      colorImage,
+    } = req.body;
     const imageUrl = await generateHomeAuraImage({
       roomType,
       style,
@@ -29,6 +38,9 @@ export const generateImage = async (req, res) => {
       roomType,
       style,
       color,
+      roomTypeImage: roomTypeImage || null,
+      styleImage: styleImage || null,
+      colorImage: colorImage || null,
     });
     if (!user.isPremium) {
       await loginSchema.findByIdAndUpdate(userId, {

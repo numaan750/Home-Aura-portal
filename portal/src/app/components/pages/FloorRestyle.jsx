@@ -152,7 +152,8 @@ const InteriorDesign = ({ onMessageSent }) => {
   const [generatedImage, setGeneratedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
-  const [selectedStyle, setSelectedStyle] = useState(null);
+const [selectedStyle, setSelectedStyle] = useState(null);
+const [selectedStyleImage, setSelectedStyleImage] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [popup, setPopup] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -212,6 +213,7 @@ const InteriorDesign = ({ onMessageSent }) => {
       style: selectedStyle,
       color: selectedColor,
       uploadedImage: uploadedImage,
+       styleImage: selectedStyleImage,
     });
 
     if (result?.needsPremium) {
@@ -249,6 +251,7 @@ const InteriorDesign = ({ onMessageSent }) => {
         generatedImage={generatedImage}
         uploadedImage={uploadedImage}
         selectedStyle={selectedStyle}
+        selectedStyleImage={selectedStyleImage}
         onBack={() => {
           setShowResult(false);
           setGeneratedImage(null);
@@ -336,7 +339,10 @@ const InteriorDesign = ({ onMessageSent }) => {
           {styles.map((s) => (
             <button
               key={s.label}
-              onClick={() => setSelectedStyle(s.label)}
+onClick={() => {
+  setSelectedStyle(s.label);
+  setSelectedStyleImage(s.image);
+}}
               className="flex flex-col items-center gap-1 cursor-pointer w-[88px] flex-none snap-start"
             >
               <div
@@ -389,10 +395,11 @@ const InteriorDesign = ({ onMessageSent }) => {
               <button
                 key={s.label}
                 onClick={() => {
-                  setSelectedStyle(s.label);
-                  setPopup(null);
-                  scrollToSelected(styleScrollRef, s.label, styles);
-                }}
+  setSelectedStyle(s.label);
+  setSelectedStyleImage(s.image);
+  setPopup(null);
+  scrollToSelected(styleScrollRef, s.label, styles);
+}}
                 className="flex flex-col items-center gap-1 cursor-pointer"
               >
                 <div

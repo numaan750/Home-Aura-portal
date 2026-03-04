@@ -6,8 +6,11 @@ const GeneratedResult = ({
   generatedImage,
   uploadedImage,
   selectedRoom,
+  selectedRoomImage,
   selectedStyle,
+  selectedStyleImage,
   selectedColor,
+  selectedColorImage,
   onBack,
   onSave,
   showBeforeAfter = true,
@@ -152,19 +155,45 @@ const GeneratedResult = ({
       </div>
       <div className="flex flex-wrap gap-3 w-full max-w-full flex-shrink-0">
         {selectedRoom && (
-          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-4 py-1.5 rounded-full">
+          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-3 py-1.5 rounded-full flex items-center gap-2">
+            {selectedRoomImage && (
+              <img
+                src={selectedRoomImage}
+                alt={selectedRoom}
+                className="w-5 h-5 object-contain rounded"
+              />
+            )}
             {selectedRoom}
           </span>
         )}
-        {selectedColor && (
-          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-4 py-1.5 rounded-full flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-[#2B2D42] inline-block" />
-            {selectedColor}
+        {selectedStyle && (
+          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-3 py-1.5 rounded-full flex items-center gap-2">
+            {selectedStyleImage && (
+              <img
+                src={selectedStyleImage}
+                alt={selectedStyle}
+                className="w-5 h-5 object-cover rounded"
+              />
+            )}
+            {selectedStyle}
           </span>
         )}
-        {selectedStyle && (
-          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-4 py-1.5 rounded-full">
-            {selectedStyle}
+        {selectedColor && (
+          <span className="border border-[#F4A261] text-[#1E1E1E] text-[13px] font-medium px-3 py-1.5 rounded-full flex items-center gap-2">
+            {selectedColorImage &&
+              (selectedColorImage.startsWith("#") ? (
+                <div
+                  className="w-5 h-5 rounded"
+                  style={{ backgroundColor: selectedColorImage }}
+                />
+              ) : (
+                <img
+                  src={selectedColorImage}
+                  alt={selectedColor}
+                  className="w-5 h-5 object-cover rounded"
+                />
+              ))}
+            {selectedColor}
           </span>
         )}
       </div>

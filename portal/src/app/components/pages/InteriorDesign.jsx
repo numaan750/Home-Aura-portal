@@ -196,8 +196,11 @@ const InteriorDesign = ({ onMessageSent }) => {
   const [generatedImage, setGeneratedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [selectedRoomImage, setSelectedRoomImage] = useState(null);
   const [selectedStyle, setSelectedStyle] = useState(null);
+  const [selectedStyleImage, setSelectedStyleImage] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedColorImage, setSelectedColorImage] = useState(null);
   const [popup, setPopup] = useState(null);
   const fileInputRef = useRef(null);
   const [showResult, setShowResult] = useState(false);
@@ -255,6 +258,9 @@ const InteriorDesign = ({ onMessageSent }) => {
       style: selectedStyle,
       color: selectedColor,
       uploadedImage: uploadedImage,
+      roomTypeImage: selectedRoomImage,
+  styleImage: selectedStyleImage,
+  colorImage: selectedColorImage,
     });
 
     if (result?.needsPremium) {
@@ -293,8 +299,11 @@ const InteriorDesign = ({ onMessageSent }) => {
         generatedImage={generatedImage}
         uploadedImage={uploadedImage}
         selectedRoom={selectedRoom}
+        selectedRoomImage={selectedRoomImage}
         selectedStyle={selectedStyle}
+        selectedStyleImage={selectedStyleImage}
         selectedColor={selectedColor}
+        selectedColorImage={selectedColorImage}
         onBack={() => {
           setShowResult(false);
           setGeneratedImage(null);
@@ -366,7 +375,9 @@ const InteriorDesign = ({ onMessageSent }) => {
       </div>
       <div>
         <div className="flex items-center justify-between mb-4">
-          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">Choose Room</h4>
+          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">
+            Choose Room
+          </h4>
           <button
             onClick={() => setPopup("room")}
             className="text-[#F4A261] text-[13px] font-medium cursor-pointer"
@@ -381,7 +392,10 @@ const InteriorDesign = ({ onMessageSent }) => {
           {rooms.map((r) => (
             <button
               key={r.label}
-              onClick={() => setSelectedRoom(r.label)}
+              onClick={() => {
+                setSelectedRoom(r.label);
+                setSelectedRoomImage(r.icon);
+              }}
               className="flex flex-col items-center gap-1 cursor-pointer w-[88px] flex-none snap-start"
             >
               <div
@@ -412,7 +426,9 @@ const InteriorDesign = ({ onMessageSent }) => {
       </div>
       <div>
         <div className="flex items-center justify-between  mb-4">
-          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">Select Style</h4>
+          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">
+            Select Style
+          </h4>
           <button
             onClick={() => setPopup("style")}
             className="text-[#F4A261] text-[13px] font-medium cursor-pointer"
@@ -427,7 +443,10 @@ const InteriorDesign = ({ onMessageSent }) => {
           {styles.map((s) => (
             <button
               key={s.label}
-              onClick={() => setSelectedStyle(s.label)}
+              onClick={() => {
+                setSelectedStyle(s.label);
+                setSelectedStyleImage(s.image);
+              }}
               className="flex flex-col items-center gap-1 cursor-pointer w-[88px] flex-none snap-start"
             >
               <div
@@ -459,7 +478,9 @@ const InteriorDesign = ({ onMessageSent }) => {
 
       <div>
         <div className="flex items-center justify-between  mb-4">
-          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">Select Color</h4>
+          <h4 className="text-[16px] font-semibold text-[#1E1E1E]">
+            Select Color
+          </h4>
           <button
             onClick={() => setPopup("color")}
             className="text-[#F4A261] text-[13px] font-medium cursor-pointer"
@@ -474,7 +495,10 @@ const InteriorDesign = ({ onMessageSent }) => {
           {colors.map((c) => (
             <button
               key={c.label}
-              onClick={() => setSelectedColor(c.label)}
+              onClick={() => {
+                setSelectedColor(c.label);
+                setSelectedColorImage(c.image);
+              }}
               className="flex flex-col items-center gap-1 cursor-pointer w-[88px] flex-none snap-start"
             >
               <div
@@ -534,6 +558,7 @@ const InteriorDesign = ({ onMessageSent }) => {
                 key={r.label}
                 onClick={() => {
                   setSelectedRoom(r.label);
+                  setSelectedRoomImage(r.icon);
                   setPopup(null);
                   scrollToSelected(roomScrollRef, r.label, rooms);
                 }}
@@ -575,6 +600,7 @@ const InteriorDesign = ({ onMessageSent }) => {
                 key={s.label}
                 onClick={() => {
                   setSelectedStyle(s.label);
+                  setSelectedStyleImage(s.image);
                   setPopup(null);
                   scrollToSelected(styleScrollRef, s.label, styles);
                 }}
@@ -616,6 +642,7 @@ const InteriorDesign = ({ onMessageSent }) => {
                 key={c.label}
                 onClick={() => {
                   setSelectedColor(c.label);
+                  setSelectedColorImage(c.image);
                   setPopup(null);
                   scrollToSelected(colorScrollRef, c.label, colors);
                 }}

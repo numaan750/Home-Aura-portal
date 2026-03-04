@@ -11,8 +11,15 @@ export const generateHomeAuraImage = async ({
   uploadedImage,
 }) => {
   try {
-    const prompt = `Redesign this ${designType} space as a ${roomType}, styled in ${style} style with ${color} color palette. Photorealistic, high quality, professional design render, keep the same structure and layout.`;
+    const promptMap = {
+      interior: `Photorealistic ${roomType} room, ${style} room style, ${color} theme combination. Upgraded furniture, cinematic lighting, high resolution.`,
+      exterior: `Photorealistic ${roomType} building, ${style} building style, ${color} theme combination. Updated facade, professional landscaping, maintain original structure, high resolution.`,
+      garden: `Photorealistic ${roomType} garden, ${style} garden style, ${color} theme combination. Lush landscaping, realistic pathways, vibrant greenery, high resolution.`,
+      repaint: `Photorealistic ${color} theme combination on ${roomType} surface. Preserved furniture and layout, natural shadows, lifelike textures.`,
+      floor: `Photorealistic ${style} floor style. Maintain existing room layout and furniture, high-resolution texture, realistic reflections, seamless integration.`,
+    };
 
+    const prompt = promptMap[designType] || "";
     const body = {
       model: process.env.DASHSCOPE_MODEL,
       input: {
